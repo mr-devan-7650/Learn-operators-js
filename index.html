@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic javascript </title>
+</head>
+
+<body>
+
+    <h3>Javascript task opertores</h3>
+
+    <script>
+
+        // Q.1 Write a program that uses a loop to calculate the sum of numbers from 1 to 50.
+
+        let sum = 1;
+        for (let i = 1; i <= 50; i++) {
+            sum += i;
+        }
+        console.log("The sum of number from 1 to 50 is :", sum);
+
+
+
+        // Q.2 Using a loop, print the multiplication table of a user given number (e.g., 7) up to 10.
+
+        let num = +prompt("Enter a Number")
+
+        for (let i = 1; i <= 10; i++) {
+            console.log(num * i);
+        }
+
+
+
+        // Q.3 Using a loop, count how many even numbers exist between 1 and a user given number and display the count.
+
+        let num1 = +prompt("Enter a Number")
+
+        let count = 0
+
+        for (let i = 1; i <= num1; i++) {
+            if (i % 2 === 0) {
+                count++;
+            }
+        }
+
+        console.log("Total even number between 1 and " + num1 + " are:", count);
+
+
+
+        // Q.4 Write a program that starts from a user given number (e.g., 20) and counts down to 1, printing each number.
+
+        let num2 = +prompt("Enter a number")
+
+        for (let i = num2; i >= 1; i--) {
+            console.log(i);
+
+        }
+
+
+
+
+
+        // Q.5 Using a loop, find the factorial of a user given number (e.g., 6).
+
+        let new1 = +prompt("Enter a number")
+
+        let factorial = 1;
+
+        for (let i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+
+        console.log(" factorial of " + num + " is: ", factorial);
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
