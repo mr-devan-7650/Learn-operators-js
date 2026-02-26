@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <script>
+
+
+// 1 . Create an object using constructor method and add data to it by taking input from the user.
+
+
+function Student(name, age, course) {
+  this.name = name
+  this.age = age
+  this.course = course
+}
+
+let name = prompt("Enter name")
+let age = prompt("Enter age")
+let course = prompt("Enter course")
+
+let s0 = new Student(name, age, course)
+
+document.write(s0.name + " " + s0.age + " " + s0.course)  
+
+
+// 2. Ask user what data they want to print from object and print only that data on the webpage.
+
+
+
+function Student(name, age, course) {
+  this.name = name
+  this.age = age
+  this.course = course
+}
+
+let s2 = new Student("Devan", 22, "JavaScript")
+
+let key = prompt("What do you want to print? (name / age / course)")
+
+document.write(s2[key])
+
+
+// 3. Create multiple objects of students and print them on the webpage.
+
+
+function Student(name, age) {
+  this.name = name
+  this.age = age
+}
+
+let s1 = new Student("Devan", 21)
+let s4 = new Student("gaurav", 22)
+let s3 = new Student("prathmesh", 20)
+
+document.write(s1.name + " " + s1.age + "<br>")
+document.write(s4.name + " " + s4.age + "<br>")
+document.write(s3.name + " " + s3.age)
+
+
+//  4 . Create a nested object of laptopDetails inside the Employee object and print the laptop Details
+
+let employee = {
+  name: "Devan",
+  id: 101,
+  laptopDetails: {
+    brand: "HP",
+    ram: "8GB",
+    processor: "i5"
+  }
+}
+
+document.write(
+  employee.laptopDetails.brand + "<br>" +
+  employee.laptopDetails.ram + "<br>" +
+  employee.laptopDetails.processor
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
