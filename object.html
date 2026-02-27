@@ -1,86 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>object</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object</title>
 </head>
+
 <body>
-    <script>
+  <script>
 
 
-// 1 . Create an object using constructor method and add data to it by taking input from the user.
+    // 1 . Create an object using constructor method and add data to it by taking input from the user.
 
 
-function Student(name, age, course) {
-  this.name = name
-  this.age = age
-  this.course = course
-}
+    function Student(name, age, course) {
+      this.name = name
+      this.age = age
+      this.course = course
+    }
 
-let name = prompt("Enter name")
-let age = prompt("Enter age")
-let course = prompt("Enter course")
+    let name = prompt("Enter name")
+    let age = prompt("Enter age")
+    let course = prompt("Enter course")
 
-let s0 = new Student(name, age, course)
+    let s0 = new Student(name, age, course)
 
-document.write(s0.name + " " + s0.age + " " + s0.course)  
-
-
-// 2. Ask user what data they want to print from object and print only that data on the webpage.
+    document.write(s0.name + " " + s0.age + " " + s0.course)
 
 
-
-function Student(name, age, course) {
-  this.name = name
-  this.age = age
-  this.course = course
-}
-
-let s2 = new Student("Devan", 22, "JavaScript")
-
-let key = prompt("What do you want to print? (name / age / course)")
-
-document.write(s2[key])
-
-
-// 3. Create multiple objects of students and print them on the webpage.
-
-
-function Student(name, age) {
-  this.name = name
-  this.age = age
-}
-
-let s1 = new Student("Devan", 21)
-let s4 = new Student("gaurav", 22)
-let s3 = new Student("prathmesh", 20)
-
-document.write(s1.name + " " + s1.age + "<br>")
-document.write(s4.name + " " + s4.age + "<br>")
-document.write(s3.name + " " + s3.age)
-
-
-//  4 . Create a nested object of laptopDetails inside the Employee object and print the laptop Details
-
-let employee = {
-  name: "Devan",
-  id: 101,
-  laptopDetails: {
-    brand: "HP",
-    ram: "8GB",
-    processor: "i5"
-  }
-}
-
-document.write(
-  employee.laptopDetails.brand + "<br>" +
-  employee.laptopDetails.ram + "<br>" +
-  employee.laptopDetails.processor
-)
+    // 2. Ask user what data they want to print from object and print only that data on the webpage.
 
 
 
+    function Student(name, age, course) {
+      this.name = name
+      this.age = age
+      this.course = course
+    }
+
+    let s2 = new Student("Devan", 22, "JavaScript")
+
+    let key = prompt("What do you want to print? (name / age / course)")
+
+    document.write(s2[key])
+
+
+    // 3. Create multiple objects of students and print them on the webpage.
+
+
+    function Student(name, age) {
+      this.name = name
+      this.age = age
+    }
+
+    let s1 = new Student("Devan", 21)
+    let s4 = new Student("gaurav", 22)
+    let s3 = new Student("prathmesh", 20)
+
+    document.write(s1.name + " " + s1.age + "<br>")
+    document.write(s4.name + " " + s4.age + "<br>")
+    document.write(s3.name + " " + s3.age)
+
+
+    //  4 . Create a nested object of laptopDetails inside the Employee object and print the laptop Details
+
+    let employee = {
+      name: "Devan",
+      id: 101,
+      laptopDetails: {
+        brand: "HP",
+        ram: "8GB",
+        processor: "i5"
+      }
+    }
+
+    document.write(
+      employee.laptopDetails.brand + "<br>" +
+      employee.laptopDetails.ram + "<br>" +
+      employee.laptopDetails.processor
+    )
+
+
+
+    // 6 . 1. Create objects using literal method. Create a method in them to view all the data on the objects.
+
+    let student = {
+      name: "Devan",
+      age: 22,
+      course: "JavaScript",
+
+      showData: function () {
+        document.write(this.name + "<br>")
+        document.write(this.age + "<br>")
+        document.write(this.course + "<br>")
+      }
+    }
+
+    student.showData()
+
+
+    // 7 . 2. Create objects of bank customers using constructor method. Create atleast 5 objects. There have to be following properties in the object- cust_id, cust_name, cust_age, cust_balance. Create a method that will show how much interest the customer will get based on the age. If the age of customer is above 60, give 12% interest. If the age is between 40 and 60, give 10% interest. If the age is between 18 and 40, give 8% interest. And if the age is less than 18 years, give 5% interest.
+
+
+    function Customer(id, name, age, balance) {
+      this.cust_id = id
+      this.cust_name = name
+      this.cust_age = age
+      this.cust_balance = balance
+
+      this.showInterest = function () {
+        let interest = 0
+
+        if (this.cust_age > 60) {
+          interest = this.cust_balance * 12 / 100
+        } else if (this.cust_age >= 40) {
+          interest = this.cust_balance * 10 / 100
+        } else if (this.cust_age >= 18) {
+          interest = this.cust_balance * 8 / 100
+        } else {
+          interest = this.cust_balance * 5 / 100
+        }
+
+        document.write(this.cust_name + " Interest: " + interest + "<br>")
+      }
+    }
+
+    let c1 = new Customer(1, "Amit", 65, 10000)
+    let c2 = new Customer(2, "Rohit", 45, 20000)
+    let c3 = new Customer(3, "Sneha", 30, 15000)
+    let c4 = new Customer(4, "Pooja", 20, 12000)
+    let c5 = new Customer(5, "Rahul", 16, 8000)
+
+    c1.showInterest()
+    c2.showInterest()
+    c3.showInterest()
+    c4.showInterest()
+    c5.showInterest()
 
 
 
@@ -93,6 +149,11 @@ document.write(
 
 
 
-</script>
+
+
+
+
+  </script>
 </body>
+
 </html>
